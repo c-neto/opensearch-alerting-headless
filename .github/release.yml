@@ -12,6 +12,7 @@ changelog:
     - title: Exciting New Features 🎉
       labels:
         - minor
+        - bug
         - enhancement
     - title: Other Changes
       labels:
