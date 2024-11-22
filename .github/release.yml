@@ -14,7 +14,6 @@ changelog:
         - minor
         - bug
         - enhancement
-        - documentation
     - title: Other Changes
       labels:
         - "*"
