@@ -2,8 +2,10 @@ name: Create Release with Auto-Generated Notes
 
 on:
   push:
-    tags:
-      - 'chart*' # Trigger on tags starting with "chart"
+    branches:
+      - main
+    # tags:
+    #   - 'chart*' # Trigger on tags starting with "chart"
 
 jobs:
   create-release:
