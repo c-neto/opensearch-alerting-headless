@@ -14,14 +14,12 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      # Create Release with Auto-Generated Notes
-      - name: Create GitHub Release
-        uses: actions/create-release@v1
-        with:
-          tag_name: ${{ github.ref_name }} # Use the tag triggering the workflow
-          release_name: Release ${{ github.ref_name }}
-          generate_release_notes: true # Automatically generate release notes
-          draft: false
-          prerelease: false
+      - name: Create release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          tag: ${{ github.ref_name }}
+        run: |
+          gh release create "$tag" \
+              --repo="$GITHUB_REPOSITORY" \
+              --title="${GITHUB_REPOSITORY#*/} ${tag#v}" \
+              --generate-notes
