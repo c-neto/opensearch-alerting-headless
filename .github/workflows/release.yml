@@ -6,7 +6,8 @@ on:
       - main
     # tags:
     #   - 'chart*' # Trigger on tags starting with "chart"
-
+permissions:
+  contents: write
 jobs:
   create-release:
     runs-on: ubuntu-latest
